@@ -1,0 +1,1 @@
+sudo ./clock  --led-chain=2 -f ../fonts/6x9.bdf --led-rows=16 --led-cols=32 --led-gpio-mapping=adafruit-hat  
