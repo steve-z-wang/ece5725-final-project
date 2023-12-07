@@ -9,8 +9,7 @@
 #include <string.h>
 #include <unistd.h>
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
   struct RGBLedMatrixOptions options;
   struct RGBLedMatrix *matrix;
   struct LedCanvas *offscreen_canvas;
@@ -37,12 +36,9 @@ int main(int argc, char **argv)
   fprintf(stderr, "Size: %dx%d. Hardware gpio mapping: %s\n",
           width, height, options.hardware_mapping);
 
-  for (i = 0; i < 10000; ++i)
-  {
-    for (y = 0; y < height; ++y)
-    {
-      for (x = 0; x < width; ++x)
-      {
+  for (i = 0; i < 1000; ++i) {
+    for (y = 0; y < height; ++y) {
+      for (x = 0; x < width; ++x) {
         led_canvas_set_pixel(offscreen_canvas, x, y, i & 0xff, x, y);
       }
     }
