@@ -55,7 +55,7 @@ def draw_text_on_canvas(canvas, text, custom_font, start_x=0, start_y=0, color=(
 
 
 fifo_path = "/tmp/matrix_fifo"
-custom_font = load_custom_font('../statics/custom_font.txt')
+custom_font = load_custom_font('./src/statics/custom_font.txt')
 canvas = Canvas(32, 16, fifo_path)  # Clear the canvas
 
 blink_state = True
@@ -77,7 +77,7 @@ while True:
     canvas.update_fifo()
 
     
-    print(blinking_time)
+    print("clock2:", blinking_time)
 
     # Toggle blink state for the next iteration
     blink_state = not blink_state

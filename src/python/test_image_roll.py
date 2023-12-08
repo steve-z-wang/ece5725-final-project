@@ -1,6 +1,7 @@
-
-from PIL import Image
+import time
 from canvas import ScrollableCanvas
+from PIL import Image
+
 fifo_path = "/tmp/matrix_fifo"
 def get_image_size(image_path):
     try:
@@ -18,11 +19,18 @@ if size:
 canvas = ScrollableCanvas(size[0],size[1],32, 3 *  16)  # Clear the canvas
 
 canvas.load_image('../statics/1.jpg', mode='pixel_by_pixel')
+i = 0
+# while True:
+#     canvas.move_offsets(10,10)
+#     canvas.update_fifo()
+#     print("image sent")
+#     time.sleep(0.5)
 
-canvas.move_focus(10,10)
+while True:
 
-
-
-
-canvas.update_fifo()
-print("image sent")
+    print(i)
+    i+=1
+    canvas.move_focus(1,1)
+    canvas.update_fifo()
+    print("image sent")
+    time.sleep(0.5)
